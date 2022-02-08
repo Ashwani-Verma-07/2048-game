@@ -1,0 +1,16 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  height: 400px;
+  background-color: rgb(9, 9, 24);
+}
+.grid div {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(90, 240, 227);
+  color: rgb(97, 15, 15);
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+}
