@@ -1,16 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
 .grid {
   display: flex;
   flex-wrap: wrap;
-  width: 400px;
-  height: 400px;
-  background-color: rgb(9, 9, 24);
+  width: 440px;
+  height: 440px;
+  background-color: white;
+}
+.html {
+  background-size: 100% 100%;
+  orientation: landscape;
+}
+.body {
+  max-width: 100%;
+  background-size: 100% 100%;
+}
+body {
+  display: grid;
+  height: 100%;
+  place-items: center;
+  background: black;
+  width: fit-content;
+}
+.text {
+  margin-left: 10%;
+  margin-right: 10%;
 }
 .grid div {
-  width: 100px;
-  height: 100px;
-  background-color: rgb(90, 240, 227);
-  color: rgb(97, 15, 15);
-  font-size: 60px;
-  font-weight: bold;
+  width: 90px;
+  height: 90px;
+  background-color: white;
+  color: black;
+  border: solid;
+  border-width: 10px;
+  font-size: 350%;
+  font-weight: bolder;
   text-align: center;
+  text-shadow: 2px 2px 2px rgb(90, 89, 89);
+}
+
+.heading {
+  position: relative;
+  margin-top: 20%;
+  margin-bottom: 10%;
+  border: solid;
+  background: linear-gradient(90deg, #14ffe9, #ffeb3b, #ff00e0, #6e1df0);
+  border-width: 5px;
+  border-color: rgb(49, 46, 46);
+  cursor: default;
+  animation: animate 2s linear infinite;
+}
+#score {
+  position: relative;
+  color: rgb(241, 238, 237);
+  font: 100px;
+  justify-content: center;
+  margin-top: 20%;
+  width: fit-content;
+  size: 50px;
+}
+
+.score-title {
+  border-style: solid;
+  size: 2in;
+
+  margin-left: 5%;
+  width: fit-content;
+}
+#result {
+  color: white;
+}
+.buttons {
+  position: relative;
 }

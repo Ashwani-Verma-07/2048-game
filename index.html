@@ -6,16 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2048-Game</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     <script src="script.js"> charset="utf-8"</script>
 </head>
 <body>
-    
+    <h1 class="head" style="color: white; margin-top: 3%;">2048 GAME</h1>
+    <p class="text" style="color: white;">2048 is a popular single-player game for
+         Web and mobile. It's a type of “sliding block puzzle” --
+         think Threes!, on which 2048 is based, or the old-timey game 
+         klotski — that's played on an almost Sudoku-like grid. ... The
+          object of the game is to combine the 
+        numbers displayed on the tiles until you reach 2048</p>
     <div class="score-container"></div>
-    <div class="score-title">score</div>
-    <span id="score">0</span>
-
+    <div class="score-title"><h1 class="heading" style="color: rgb(20, 20, 20);">SCORE BOARD</h1></div>
+   <div class="score-card">
+    <div id="score" >0</div>
+   </div>
     <div id="result"></div>
+    <div class="container">
     <div class="grid"></div>
+    </div>
+    <div class="buttons">
+        <button class="up-button">
+            <i  class="fas fa-arrow-up fa-2x"></i>
+        </button>
+      <br>
+        <button class="left-button">
+            <i class="fas fa-arrow-left fa-2x"></i>
+        </button>
+        <button class="right-button">
+            <i class="fas fa-arrow-right fa-2x"></i>
+        </button>
+        <br>
+        <button class="down-button">
+            <i  class="fas fa-arrow-down fa-2x"></i>
+        </button>
+      </div>
     
 </body>
 </html>
