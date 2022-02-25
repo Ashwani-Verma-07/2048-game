@@ -1,16 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
 .grid {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
-  width: 400px;
-  height: 400px;
-  background-color: rgb(9, 9, 24);
+  width: 440px;
+  height: 440px;
+  background-color: white;
+  max-width: 100%;
+}
+.new-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  vertical-align: center;
+  max-width: 100%;
+  height: auto;
+}
+html {
+  background: black;
+}
+body {
+  align-items: center;
+  max-width: 100%;
 }
 .grid div {
-  width: 100px;
-  height: 100px;
-  background-color: rgb(90, 240, 227);
-  color: rgb(97, 15, 15);
-  font-size: 60px;
+  display: flex;
+  position: relative;
+  width: 90px;
+  height: 90px;
+  background-color: white;
+  color: black;
+  border: solid;
+  border-width: 10px;
+  font-size: 250%;
   font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  text-shadow: 2px 2px 3px rgb(63, 60, 60);
+}
+.stop-button {
+  float: right;
+  justify-content: right;
+  margin-left: 80%;
+}
+.heading {
+  position: relative;
+  margin-top: 5%;
+  margin-bottom: 1%;
+  border: solid;
+  background: linear-gradient(90deg, #14ffe9, #ffeb3b, #ff00e0, #6e1df0);
+  border-width: 5px;
+  border-color: rgb(48, 46, 46);
+}
+.head {
+  max-width: 100%;
   text-align: center;
+}
+#score {
+  position: relative;
+  color: rgb(241, 238, 237);
+  justify-content: center;
+  margin-top: 20%;
+}
+
+#result {
+  color: white;
+}
+.buttons {
+  position: relative;
+  margin-top: 1%;
+}
+.left-button {
+  margin-right: 20px;
+  margin-left: 13px;
+}
+.right-button {
+  margin-left: 3px;
+}
+.up-button {
+  margin-left: 40px;
+}
+.down-button {
+  margin-left: 40px;
+}
+@media only screen and (min-width: 300px) and (max-width: 490px) {
+  div.new-content {
+    max-width: 100%;
+  }
+  .grid {
+    width: 400px;
+    height: 400px;
+  }
+  .grid div {
+    width: 80px;
+    height: 80px;
+    border-width: 10px;
+  }
+  html {
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .right-button {
+    margin-left: 30px;
+  }
+  .left-button {
+    margin-left: -1px;
+  }
 }
