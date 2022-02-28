@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () =>  {
       generate()
     }
     createBoard()
+    
     //generate a new number
     function generate() {
     
@@ -40,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () =>  {
     }
     randomNumber = Math.floor(Math.random() * squares.length)
     randomguide= Math.floor(Math.random() *6)
-    console.log(randomguide)
+        
     if (squares[randomNumber].innerHTML == 0) {
       if(randomguide == 1){
         squares[randomNumber].innerHTML = 4
