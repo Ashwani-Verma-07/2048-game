@@ -6,17 +6,19 @@ document.addEventListener('DOMContentLoaded', () =>  {
     const down=document.querySelector('.down-button')
     const right=document.querySelector('.right-button')
     const left =document.querySelector('.left-button')
+    const stop=document.querySelector('.stop-button')
     scoreDisplay.style.fontSize="40px"
     let squares = []
+    let count=0
     const width = 4
     let score = 0
-  
-        
+
+    
     left.addEventListener('click',()=> keyLeft())
     right.addEventListener('click',()=> keyRight())
     up.addEventListener('click',()=> keyUp())
     down.addEventListener('click',()=> keyDown())
-
+    stop.addEventListener('click',()=> location.reload())
    
 
     //create the playing board
@@ -31,14 +33,28 @@ document.addEventListener('DOMContentLoaded', () =>  {
       generate()
     }
     createBoard()
-  
     //generate a new number
     function generate() {
-      randomNumber = Math.floor(Math.random() * squares.length)
-      if (squares[randomNumber].innerHTML == 0) {
+    
+    if(count==15){
+      count=0
+      return;
+    }
+    randomNumber = Math.floor(Math.random() * squares.length)
+    randomguide= Math.floor(Math.random() *6)
+    if (squares[randomNumber].innerHTML == 0) {
+      if(randomguide == 1){
+        squares[randomNumber].innerHTML = 4
+      }else{
         squares[randomNumber].innerHTML = 2
+      }
+        
         addColours()
-      } else generate()
+      }
+      else{
+        count++
+        generate()
+      }
     }
   
     function moveRight() {
@@ -128,6 +144,9 @@ document.addEventListener('DOMContentLoaded', () =>  {
   
     function combineRow() {
       for (let i =1; i < 16; i++) {
+        if(i%4==0){
+          continue;
+        }
         if (squares[i-1].innerHTML === squares[i].innerHTML) {
           let combinedTotal = parseInt(squares[i-1].innerHTML) + parseInt(squares[i].innerHTML)
           squares[i-1].innerHTML = combinedTotal
@@ -162,13 +181,13 @@ document.addEventListener('DOMContentLoaded', () =>  {
  
     //assign functions to keyCodes
     function control(e) {
-      if(e.keyCode === 37) {
+      if(e.keyCode === 37 || e.keyCode === 100) {
         keyLeft()
-      } else if (e.keyCode === 38) {
+      } else if (e.keyCode === 38 || e.keyCode === 104) {
         keyUp()
-      } else if (e.keyCode === 39) {
+      } else if (e.keyCode === 39 || e.keyCode === 102) {
         keyRight()
-      } else if (e.keyCode === 40) {
+      } else if (e.keyCode === 40 || e.keyCode === 98) {
         keyDown()
       }  
     }
@@ -178,6 +197,12 @@ document.addEventListener('DOMContentLoaded', () =>  {
 
 
     function keyRight() {
+      for (let i =1; i <16; i++) {
+        if (squares[i-1].innerHTML === squares[i].innerHTML && squares[i]!=0) {
+          zeros=1
+         break;
+        }
+      }
       moveRight()
       combineRow()
       moveRight()
@@ -233,6 +258,9 @@ document.addEventListener('DOMContentLoaded', () =>  {
        }
          //rows
      for (let i =1; i <16; i++) {
+      if(i%4==0){
+        continue;
+      }
       if (squares[i-1].innerHTML === squares[i].innerHTML) {
         zeros=1
        break;
@@ -272,7 +300,7 @@ document.addEventListener('DOMContentLoaded', () =>  {
         else if (squares[i].innerHTML == 256) squares[i].style.backgroundColor = '#b44de8' 
         else if (squares[i].innerHTML == 512) squares[i].style.backgroundColor = '#76daff' 
         else if (squares[i].innerHTML == 1024) squares[i].style.backgroundColor = '#e84d81' 
-        else if (squares[i].innerHTML == 2048) squares[i].style.backgroundColor = '#bcb6f0' 
+        else if (squares[i].innerHTML == 2048) squares[i].style.backgroundColor = '#5048b5' 
       }
   }
   
