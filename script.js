@@ -2,20 +2,14 @@ document.addEventListener('DOMContentLoaded', () =>  {
   const gridDisplay = document.querySelector('.grid')
   const scoreDisplay = document.getElementById('score')
   const resultDisplay = document.getElementById('result')
-  const up=document.querySelector('.up-button')
-  const down=document.querySelector('.down-button')
-  const right=document.querySelector('.right-button')
-  const left =document.querySelector('.left-button')
+
   const stop=document.querySelector('.stop-button')
   scoreDisplay.style.fontSize="40px"
   let squares = []
   let count=0
   const width = 4
   let score = 0
-  left.addEventListener('click',()=> keyLeft())
-  right.addEventListener('click',()=> keyRight())
-  up.addEventListener('click',()=> keyUp())
-  down.addEventListener('click',()=> keyDown())
+
   stop.addEventListener('click',()=> location.reload())
  
 
@@ -35,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () =>  {
   //generate a new number
   function generate() {
   
-  if(count==15){
+  if(count == 50){
     count=0
     return;
   }
@@ -307,8 +301,11 @@ document.addEventListener('DOMContentLoaded', () =>  {
 
 var myTimer = setInterval(addColours, 50)
 
-document.addEventListener('.grid', handleTouchStart, false);        
-document.addEventListener('.grid', handleTouchMove, false);
+
+//Adding Gestures LEFT RIGHT UP DOWN
+
+document.addEventListener('touchstart', handleTouchStart, false);        
+document.addEventListener('touchmove', handleTouchMove, false);
 
 var xDown = null;                                                        
 var yDown = null;
@@ -337,20 +334,22 @@ function handleTouchMove(evt) {
                                                                          
     if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
         if ( xDiff > 0 ) {
-           keyRight()
-        } else {
            keyLeft()
+        } else {
+            keyRight()
         }                       
     } else {
         if ( yDiff > 0 ) {
-            keyDown()
+            keyUp()
         } else { 
-           keyUp()
+           keyDown()
         }                                                                 
     }
     /* reset values */
     xDown = null;
     yDown = null;                                             
 };
+
+
 
 })
