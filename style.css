@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  overflow-x:hidden;
+  overflow: x 0;
   font-family: "Poppins", sans-serif;
 }
 
@@ -32,12 +32,10 @@
   max-width: 100%;
   height: auto;
 }
-.container{
 
-
-}
 html {
   background: black;
+  background-size: 100% 100%;
 }
 body {
   align-items: center;
@@ -82,6 +80,7 @@ body {
   color: rgb(241, 238, 237);
   justify-content: center;
   margin-top: 20%;
+  margin-bottom: 10%;
 }
 
 #result {
@@ -105,22 +104,27 @@ body {
   margin-left: 40px;
 }
 @media only screen and (min-width: 300px) and (max-width: 490px) {
+  *{
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+  }
   div.new-content {
     max-width: 100%;
   }
   .grid {
-    width: 400px;
-    height: 400px;
+    width: 370px;
+    height: 370px;
   }
   .grid div {
-    width: 80px;
-    height: 80px;
-    border-width: 10px;
+    width: 82.5px;
+    height: 82.5px;
+    border-width: 5px;
   }
-  html {
-    max-width: 100%;
+  .html {
     justify-content: center;
     align-items: center;
+    orientation: landscape;
   }
   .right-button {
     margin-left: 30px;
