@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () =>  {
   const scoreDisplay = document.getElementById('score')
   const resultDisplay = document.getElementById('result')
 
+<<<<<<< HEAD
   const stop=document.querySelector('.stop-button')
   scoreDisplay.style.fontSize="40px"
   let squares = []
@@ -20,6 +21,80 @@ document.addEventListener('DOMContentLoaded', () =>  {
       square.innerHTML = 0
       gridDisplay.appendChild(square)
       squares.push(square)
+||||||| 859a5bf
+    //create the playing board
+    function createBoard() {
+      for (let i=0; i < width*width; i++) {
+        square = document.createElement('div')
+        square.innerHTML = 0
+        gridDisplay.appendChild(square)
+        squares.push(square)
+      }
+      generate()
+      generate()
+    }
+    createBoard()
+    //generate a new number
+    function generate() {
+    
+    if(count==15){
+      count=0
+      return;
+    }
+    randomNumber = Math.floor(Math.random() * squares.length)
+    randomguide= Math.floor(Math.random() *6)
+    console.log(randomguide)
+    if (squares[randomNumber].innerHTML == 0) {
+      if(randomguide == 1){
+        squares[randomNumber].innerHTML = 4
+      }else{
+        squares[randomNumber].innerHTML = 2
+      }
+        
+        addColours()
+      }
+      else{
+        count++
+        generate()
+      }
+=======
+    //create the playing board
+    function createBoard() {
+      for (let i=0; i < width*width; i++) {
+        square = document.createElement('div')
+        square.innerHTML = 0
+        gridDisplay.appendChild(square)
+        squares.push(square)
+      }
+      generate()
+      generate()
+    }
+    createBoard()
+    
+    //generate a new number
+    function generate() {
+    
+    if(count==15){
+      count=0
+      return;
+    }
+    randomNumber = Math.floor(Math.random() * squares.length)
+    randomguide= Math.floor(Math.random() *6)
+        
+    if (squares[randomNumber].innerHTML == 0) {
+      if(randomguide == 1){
+        squares[randomNumber].innerHTML = 4
+      }else{
+        squares[randomNumber].innerHTML = 2
+      }
+        
+        addColours()
+      }
+      else{
+        count++
+        generate()
+      }
+>>>>>>> 2bb19958ff1411d0a4e64a3ec48609cbafff9ede
     }
     generate()
     generate()

@@ -1,7 +1,12 @@
 * {
   margin: 0;
   padding: 0;
+<<<<<<< HEAD
   overflow: x 0;
+||||||| 859a5bf
+=======
+  overflow-x:hidden;
+>>>>>>> 2bb19958ff1411d0a4e64a3ec48609cbafff9ede
   font-family: "Poppins", sans-serif;
 }
 
