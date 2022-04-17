@@ -288,13 +288,13 @@ document.addEventListener('DOMContentLoaded', () =>  {
       else if (squares[i].innerHTML  == 4) squares[i].style.backgroundColor = '#f0d0a1' 
       else if (squares[i].innerHTML  == 8) squares[i].style.backgroundColor = '#eb9042' 
       else if (squares[i].innerHTML  == 16) squares[i].style.backgroundColor = '#fa8787' 
-      else if (squares[i].innerHTML  == 32) squares[i].style.backgroundColor = '#ff3030' 
-      else if (squares[i].innerHTML == 64) squares[i].style.backgroundColor = '#cc0000' 
+      else if (squares[i].innerHTML  == 32) squares[i].style.backgroundColor = '#ff5c33' 
+      else if (squares[i].innerHTML == 64) squares[i].style.backgroundColor = '#ff0000' 
       else if (squares[i].innerHTML == 128) squares[i].style.backgroundColor = '#ffd952' 
-      else if (squares[i].innerHTML == 256) squares[i].style.backgroundColor = '#b44de8' 
+      else if (squares[i].innerHTML == 256) squares[i].style.backgroundColor = '#df80ff' 
       else if (squares[i].innerHTML == 512) squares[i].style.backgroundColor = '#76daff' 
-      else if (squares[i].innerHTML == 1024) squares[i].style.backgroundColor = '#e84d81' 
-      else if (squares[i].innerHTML == 2048) squares[i].style.backgroundColor = '#5048b5' 
+      else if (squares[i].innerHTML == 1024) squares[i].style.backgroundColor = '#ff33cc' 
+      else if (squares[i].innerHTML == 2048) squares[i].style.backgroundColor = '#baff00' 
     }
 }
 
