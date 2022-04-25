@@ -2,17 +2,15 @@ document.addEventListener('DOMContentLoaded', () =>  {
   const gridDisplay = document.querySelector('.grid')
   const scoreDisplay = document.getElementById('score')
   const resultDisplay = document.getElementById('result')
-
   const stop=document.querySelector('.stop-button')
   scoreDisplay.style.fontSize="40px"
   let squares = []
   let count=0
   const width = 4
   let score = 0
+  var retreive = localStorage.getItem("high_score_local");
 
   stop.addEventListener('click',()=> location.reload())
- 
-
   //create the playing board
   function createBoard() {
     for (let i=0; i < width*width; i++) {
@@ -268,13 +266,26 @@ document.addEventListener('DOMContentLoaded', () =>  {
     break;
       }
    }
-   
-    
  for(let i=0;i<squares.length;i++){
    if (zeros == 0 && squares[i].innerHTML != 0) {
-    resultDisplay.innerHTML = 'You LOSE'
+  
+  if(score < retreive){
+    localStorage.setItem("high_score",score)
+    var retreives = localStorage.getItem("high_score")
+    resultDisplay.innerHTML = 'You LOSE,' + ' BEST ['+ retreive + ']'
+  
     document.removeEventListener('keyup', control)
     setTimeout(() => clear(), 3000)
+    break;
+  }
+    localStorage.setItem("high_score_local",score)
+    retreive = localStorage.getItem("high_score_local")
+    
+    resultDisplay.innerHTML = 'You LOSE,' + ' BEST ['+ retreive +']'
+  
+    document.removeEventListener('keyup', control)
+    setTimeout(() => clear(), 3000)
+   
   }
   }
 
