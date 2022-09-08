@@ -1,3 +1,5 @@
 # 2048-game
->
-![Screenshot (317)](https://user-images.githubusercontent.com/89683890/166246411-3ad81660-9402-4452-bad8-5bd9b150a5ce.png)
+# # **HOW TO PLAY**: 
+<h3>Use your arrow keys to move the tiles. Tiles with the same number merge into one when they touch. Add them up to reach 2048!</h3>
+
+https://user-images.githubusercontent.com/89683890/189175788-5a89222b-c04b-4f32-85f0-10c59fc7be95.mp4
